@@ -3,6 +3,7 @@ let gitImage = "images/GitHub.jpg";
 let portoImage = "images/Porto.jpg";
 let message = "Hello World!";
 
+// Functions to switch images, display the message and reset them to their original state.
 function showIDE() {
     document.getElementById("replaceMe").src = ideImage;
 }
@@ -19,3 +20,9 @@ function reset() {
      document.getElementById("replaceText").textContent = "Message will display here";
      document.getElementById("replaceMe").src = portoImage;
 }
+
+// Event handlers.
+document.getElementById("button1").onclick = showIDE;
+document.getElementById("button2").onclick = showGit;
+document.getElementById("button3").onclick = showMessage;
+document.getElementById("button4").onclick = reset;
