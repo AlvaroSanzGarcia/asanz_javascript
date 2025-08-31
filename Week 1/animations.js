@@ -1,9 +1,10 @@
+// Image and message variables.
 let ideImage = "images/IDE.jpg";
 let gitImage = "images/GitHub.jpg";
 let portoImage = "images/Porto.jpg";
 let message = "Hello World!";
 
-// Functions to switch images, display the message and reset them to their original state.
+// Functions to update image and text content.
 function showIDE() {
     document.getElementById("replaceMe").src = ideImage;
 }
