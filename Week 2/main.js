@@ -1,3 +1,20 @@
+// Constant declaration
+const POOR_CREDIT = 1.5;
+const FAIR_CREDIT = 1.0;
+const GOOD_CREDIT = 0.5;
+const EXCELLENT_CREDIT = -0.5;
+
+
+// Initial form setup
+window.onload = function() {
+    document.getElementById("inputPrincipalLoanAmount").value = 250000;
+    document.getElementById("inputInterestRate").value = 5.7;
+    document.getElementById("inputLoanYears").value = 30;
+    document.getElementById("inputDownPayment").value = 10000;
+    document.getElementById("creditScoreGood").checked = true;
+    calculateMonthlyPayment();
+};
+
 // Event listener for the 'calculate' button
 document.getElementById("mortgageForm").addEventListener("submit", function (e) {
     e.preventDefault(); // Prevents the browser from reloading the form after submitting it (default behavior)
@@ -6,6 +23,16 @@ document.getElementById("mortgageForm").addEventListener("submit", function (e) 
 
 // Event listener for the 'reset' button
 document.getElementById("resetButton").addEventListener("click", resetValues);
+
+// Event listeners to trigger re-calculation
+document.getElementById("inputPrincipalLoanAmount").addEventListener("change", calculateMonthlyPayment);
+document.getElementById("inputInterestRate").addEventListener("change", calculateMonthlyPayment);
+document.getElementById("inputLoanYears").addEventListener("change", calculateMonthlyPayment);
+document.getElementById("inputDownPayment").addEventListener("change", calculateMonthlyPayment);
+document.getElementById("creditScoreGood").addEventListener("change", calculateMonthlyPayment);
+document.querySelectorAll('input[name="creditScore"]').forEach(radio => {
+    radio.addEventListener("change", calculateMonthlyPayment);
+});
 
 // Main function
 function calculateMonthlyPayment() {
@@ -19,16 +46,16 @@ function calculateMonthlyPayment() {
     
     switch (selectedScore.value) {
         case "poor":
-            creditScoreAdjustment = 1.5;
+            creditScoreAdjustment = POOR_CREDIT;
             break;
         case "fair":
-            creditScoreAdjustment = 1.0;
+            creditScoreAdjustment = FAIR_CREDIT;
             break;
         case "good":
-            creditScoreAdjustment = 0.5;
+            creditScoreAdjustment = GOOD_CREDIT;
             break;
         case "excellent":
-            creditScoreAdjustment = -0.5;
+            creditScoreAdjustment = EXCELLENT_CREDIT;
             break;
     }
 
@@ -47,9 +74,6 @@ function calculateMonthlyPayment() {
 function resetValues() {
     document.getElementById("mortgageForm").reset();
 }
-
-document.getElementById("").checked
-
 
 
 
