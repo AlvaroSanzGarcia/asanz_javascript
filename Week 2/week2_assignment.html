@@ -36,6 +36,29 @@
                         placeholder="Enter your down payment">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label d-block">Select your credit score range:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="creditScore" id="creditScorePoor"
+                            value="poor" required>
+                        <label class="form-check-label" for="creditScorePoor">Poor</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="creditScore" id="creditScoreFair"
+                            value="fair">
+                        <label class="form-check-label" for="creditScoreFair">Fair</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="creditScore" id="creditScoreGood"
+                            value="good">
+                        <label class="form-check-label" for="creditScoreGood">Good</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="creditScore" id="creditScoreExcellent"
+                            value="excellent">
+                        <label class="form-check-label" for="creditScoreExcellent">Excellent</label>
+                    </div>
+                </div>
+                <div class="mb-3">
                     <label for="outputMonthlyPayment" class="form-label">Monthly Payment</label>
                     <input type="text" id="outputMonthlyPayment" class="form-control"
                         placeholder="Value will display here" disabled>

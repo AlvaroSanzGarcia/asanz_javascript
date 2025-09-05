@@ -14,7 +14,26 @@ function calculateMonthlyPayment() {
     let numberOfYears = parseFloat(document.getElementById("inputLoanYears").value);
     let downPayment = parseFloat(document.getElementById("inputDownPayment").value || 0); // Assigns 0 to the 'downPayment' variable if it's empty 
 
-    let monthlyInterestRate = interestRate / 100 / 12;
+    let creditScoreAdjustment = 0;
+    let selectedScore = document.querySelector('input[name="creditScore"]:checked')
+    
+    switch (selectedScore.value) {
+        case "poor":
+            creditScoreAdjustment = 1.5;
+            break;
+        case "fair":
+            creditScoreAdjustment = 1.0;
+            break;
+        case "good":
+            creditScoreAdjustment = 0.5;
+            break;
+        case "excellent":
+            creditScoreAdjustment = -0.5;
+            break;
+    }
+
+    let adjustedAnnualRate = interestRate + creditScoreAdjustment;
+    let monthlyInterestRate = adjustedAnnualRate / 100 / 12;
     let numberOfPayments = numberOfYears * 12;
     let loanAmount = principalLoanAmount - downPayment;
 
@@ -29,6 +48,7 @@ function resetValues() {
     document.getElementById("mortgageForm").reset();
 }
 
+document.getElementById("").checked
 
 
 
