@@ -4,7 +4,6 @@ const FAIR_CREDIT = 1.0;
 const GOOD_CREDIT = 0.5;
 const EXCELLENT_CREDIT = -0.5;
 
-
 // Initial form setup
 window.onload = function() {
     document.getElementById("inputPrincipalLoanAmount").value = 250000;
