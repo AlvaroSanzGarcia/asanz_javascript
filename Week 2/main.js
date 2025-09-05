@@ -1,14 +1,14 @@
 // Event listener for the 'calculate' button
 document.getElementById("mortgageForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Prevents the browser from reloading the form after submitting it (default behavior)
-  calculateMonthlyPayment();
+    e.preventDefault(); // Prevents the browser from reloading the form after submitting it (default behavior)
+    calculateMonthlyPayment();
 });
 
 // Event listener for the 'reset' button
 document.getElementById("resetButton").addEventListener("click", resetValues);
 
 // Main function
-function calculateMonthlyPayment() {    
+function calculateMonthlyPayment() {
     let principalLoanAmount = parseFloat(document.getElementById("inputPrincipalLoanAmount").value);
     let interestRate = parseFloat(document.getElementById("inputInterestRate").value);
     let numberOfYears = parseFloat(document.getElementById("inputLoanYears").value);

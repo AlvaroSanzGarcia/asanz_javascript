@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="styles.css" rel="stylesheet">      
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
@@ -14,29 +17,34 @@
                 <h2 class="text-center mb-4">Mortgage Monthly Payment Calculator</h2>
                 <div class="mb-3">
                     <label for="inputPrincipalLoanAmount" class="form-label">Principal loan amount</label>
-                    <input type="number" class="form-control" id="inputPrincipalLoanAmount" required min="1" placeholder="Enter the total loan amount">
+                    <input type="number" class="form-control" id="inputPrincipalLoanAmount" required min="1"
+                        placeholder="Enter the total loan amount">
                 </div>
                 <div class="mb-3">
                     <label for="inputInterestRate" class="form-label">Interest rate</label>
-                    <input type="number" class="form-control" id="inputInterestRate" required min="0.1" step="0.1" placeholder="Enter the yearly interest rate">
+                    <input type="number" class="form-control" id="inputInterestRate" required min="0.1" step="0.1"
+                        placeholder="Enter the yearly interest rate">
                 </div>
                 <div class="mb-3">
                     <label for="inputLoanYears" class="form-label">Loan term</label>
-                    <input type="number" class="form-control" id="inputLoanYears" placeholder="Enter the number of years of your loan" required min="1">
-                </div>      
+                    <input type="number" class="form-control" id="inputLoanYears"
+                        placeholder="Enter the number of years of your loan" required min="1">
+                </div>
                 <div class="mb-3 form-check">
                     <label class="form-check-label" for="downPaymentCheckbox">Click here to add a down payment</label>
-                    <input type="checkbox" class="form-check-input" id="downPaymentCheckbox" data-bs-toggle="collapse" data-bs-target="#collapseField">                    
+                    <input type="checkbox" class="form-check-input" id="downPaymentCheckbox" data-bs-toggle="collapse"
+                        data-bs-target="#collapseField">
                 </div>
                 <div class="collapse" id="collapseField">
                     <div class="mb-3">
                         <label for="extraInput" class="form-label">Down Payment</label>
                         <input type="number" class="form-control" id="inputDownPayment" min="0">
-                    </div>                    
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="outputMonthlyPayment" class="form-label">Monthly Payment</label>
-                    <input type="text" id="outputMonthlyPayment" class="form-control" placeholder="Value will display here" disabled>
+                    <input type="text" id="outputMonthlyPayment" class="form-control"
+                        placeholder="Value will display here" disabled>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 my-1" id="calculateButton">Calculate</button>
                 <button type="button" class="btn btn-primary w-100 my-1" id="resetButton">Reset</button>
@@ -45,6 +53,9 @@
     </div>
 
     <script src="main.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
