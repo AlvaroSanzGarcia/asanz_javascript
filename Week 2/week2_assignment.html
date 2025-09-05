@@ -12,30 +12,37 @@
 
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="card p-4 shadow" style="width: 100%; max-width: 400px;">
+        <div class="card p-4 shadow" style="width: 100%; max-width: 600px;">
             <form id="mortgageForm">
                 <h2 class="text-center mb-4">Mortgage Monthly Payment Calculator</h2>
-                <div class="mb-3">
-                    <label for="inputPrincipalLoanAmount" class="form-label">Principal loan amount</label>
-                    <input type="number" class="form-control" id="inputPrincipalLoanAmount" required min="1"
-                        placeholder="Enter the total loan amount">
+
+                <div class="row mb-3">
+                    <div class="mb-3 col">
+                        <label for="inputPrincipalLoanAmount" class="form-label">Principal Loan Amount</label>
+                        <input type="number" class="form-control" id="inputPrincipalLoanAmount" required min="1"
+                            placeholder="Enter the total loan amount">
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="inputInterestRate" class="form-label">Interest Rate</label>
+                        <input type="number" class="form-control" id="inputInterestRate" required min="0.1" step="0.1"
+                            placeholder="Enter the yearly interest rate">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="inputInterestRate" class="form-label">Interest rate</label>
-                    <input type="number" class="form-control" id="inputInterestRate" required min="0.1" step="0.1"
-                        placeholder="Enter the yearly interest rate">
+
+                <div class="row mb-3">
+                    <div class="mb-3 col">
+                        <label for="inputLoanYears" class="form-label">Loan Term</label>
+                        <input type="number" class="form-control" id="inputLoanYears" placeholder="In years" required
+                            min="1">
+                    </div>
+                    <div class="mb-3 col">
+                        <label for="inputDownPayment" class="form-label">Down Payment</label>
+                        <input type="number" class="form-control" id="inputDownPayment" min="0"
+                            placeholder="Enter your down payment">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="inputLoanYears" class="form-label">Loan term</label>
-                    <input type="number" class="form-control" id="inputLoanYears"
-                        placeholder="Enter the number of years of your loan" required min="1">
-                </div>
-                <div class="mb-3">
-                    <label for="inputDownPayment" class="form-label">Down Payment</label>
-                    <input type="number" class="form-control" id="inputDownPayment" min="0"
-                        placeholder="Enter your down payment">
-                </div>
-                <div class="mb-3">
+
+                <div class="mb-3 text-center">
                     <label class="form-label d-block">Select your credit score range:</label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="creditScore" id="creditScorePoor"
@@ -58,11 +65,13 @@
                         <label class="form-check-label" for="creditScoreExcellent">Excellent</label>
                     </div>
                 </div>
+
                 <div class="mb-3">
-                    <label for="outputMonthlyPayment" class="form-label">Monthly Payment</label>
+                    <label for="outputMonthlyPayment" class="form-label">Monthly Payment:</label>
                     <input type="text" id="outputMonthlyPayment" class="form-control"
                         placeholder="Value will display here" disabled>
                 </div>
+
                 <button type="submit" class="btn btn-primary w-100 my-1" id="calculateButton">Calculate</button>
                 <button type="button" class="btn btn-primary w-100 my-1" id="resetButton">Reset</button>
             </form>
