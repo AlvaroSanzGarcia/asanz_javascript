@@ -1,0 +1,40 @@
+.cells {
+    width: 90px;
+    height: 90px;
+    background-color: white; 
+    border-radius: 6px;
+}
+
+.cells {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#gameName h1 {
+    color: slateblue;
+    text-shadow:  -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+#gameOutput {
+    font-size: 30px;
+    font-weight: bold;
+    backdrop-filter: blur(30px);
+    color: purple;
+    width: 40%;            
+    margin: 0 auto;  
+}
+#turnOutput {
+    font-size: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(30px);
+    width: 20%;            
+    margin: 0 auto;  
+}
+
+html, body {
+    background-image: url(img/background.jpg);
+    background-size: cover;                    
+    background-repeat: no-repeat;
+    background-position: center center;  
+    background-attachment: fixed; 
+}
