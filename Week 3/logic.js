@@ -192,7 +192,7 @@ function isDraw() {
 }
 
 
-/* This function rebuilds the visual board using the current contents of gameArray,but without 
+/* This function rebuilds the visual board using the current contents of gameArray, but without 
 attaching any event listeners. This ensures that once the game is over (either by win or draw) 
 clicks on the cells no longer trigger any actions. It is called at the end of the game to lock 
 the board. */ 
