@@ -15,24 +15,18 @@ window.onload = function () {
 
     let inputGroup1 = document.createElement("div");
     inputGroup1.className = "input-group mb-3";
-
-    let inputButton = document.createElement("button");
-    inputButton.type = "button";
-    inputButton.textContent = "Log";
-    inputButton.className = "btn btn-outline-primary";
-    inputButton.addEventListener("click", function() {
-        let output = document.getElementsByClassName("result-group");
-        for (let i = 0; i < output.length; i++) {
-            output[i].textContent = document.getElementById("textField").value;
-        }
-    });
-    inputGroup1.appendChild(inputButton);
-
+    
     let inputField = document.createElement("input");
     inputField.type = "text";
     inputField.id = "textField";
     inputField.className = "form-control";
     inputField.placeholder = "Enter text";
+    inputField.addEventListener("input", function() {
+        let output = document.getElementsByClassName("result-group");
+        for (let i = 0; i < output.length; i++) {
+            output[i].textContent = document.getElementById("textField").value;
+        }
+    });
     inputGroup1.appendChild(inputField);
 
     cardBody1.appendChild(inputGroup1);   
@@ -43,7 +37,7 @@ window.onload = function () {
         resultGroup.className = "input-group mb-3 result-group";
 
         let resultField = document.createElement("div");
-        resultField.textContent = "olakease";
+        resultField.textContent = "text to be replaced";
 
         resultGroup.appendChild(resultField);
         cardBody1.appendChild(resultGroup);
