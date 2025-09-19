@@ -109,9 +109,33 @@
             </div>
         </div>
 
+        <!-- Tree Walker (second approach for DOM Traversal)-->
+        <div class="col">
+            <div class="card mb-4 shadow" id="card8">
+                <div class="card-header" style="font-weight: bold;">Tree Walker (DOM Traversal)</div>
+                <div class="card-body">                    
+                    <div>
+                        <button type="button" class="btn btn-primary mb-2" id="tree-walker-button">Find Text Nodes</button>
+                    </div>
+                    <div>
+                        <select class="form-select mb-2" id="search-options">
+                            <option value="card1" id="card1">card1</option>
+                            <option value="card2" id="card2">card2</option>
+                            <option value="card3" id="card3">card3</option>
+                            <option value="card4" id="card4">card4</option>
+                            <option value="card5" id="card5">card5</option>
+                            <option value="card6" id="card6">card6</option>
+                            <option value="card7" id="card7">card7</option>
+                        </select>
+                    </div>
+                    <div id="tree-walker-output"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-
+    
 
     <!-- Modal -->
     <div class="modal fade" id="Modal" tabindex="-1">
@@ -125,7 +149,8 @@
                     <p>Woud you like to save your password?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-button">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="close-button">Close</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-button">Save</button>
                 </div>
             </div>

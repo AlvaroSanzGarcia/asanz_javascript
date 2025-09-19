@@ -100,3 +100,35 @@ if (toastTrigger2) {
     toastBootstrap.show()
   })
 }
+
+
+// Tree Walker ---- Different implementation of DOM Traversal that searches nodes using JavaScript native DOM traversal interface
+function getTextNodes(root) {
+    let walker = document.createTreeWalker(
+        root, 
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode(node) {
+                return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }
+        },
+
+        false
+    );
+
+    var textNodes = [];
+    while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+    }
+
+    return textNodes;
+}
+
+
+document.getElementById("tree-walker-button").addEventListener("click", function() {
+    document.getElementById("tree-walker-output").innerHTML = "";
+    const selectedOption = document.getElementById("search-options").value;
+    const selectedElement = document.getElementById(selectedOption);
+    var textNodes = getTextNodes(selectedElement);
+    textNodes.forEach((element) => document.getElementById("tree-walker-output").innerHTML += element.nodeValue + "<br>")
+})
