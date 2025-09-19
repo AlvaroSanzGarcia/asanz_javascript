@@ -10,132 +10,138 @@
 </head>
 
 <body style="background-color: lightcyan;">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 p-3 text-start">
 
-        <!-- DOM traversal -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card1">
-                <div class="card-header" style="font-weight: bold;">DOM Traversal</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <button class="btn btn-primary" id="log-button">Log</button>
-                        <input type="text" class="form-control" id="input-field" placeholder="Enter text" value="card2"
-                            disabled>
-                    </div>
-                    <div class="input-group mb-3" id="result-field"></div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid">
 
-        <!-- DOM modification -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card2">
-                <div class="card-header" style="font-weight: bold;">DOM Modification</div>
-                <div class="card-body">
-                    <button class="btn btn-primary" id="addItemButton">Add Item</button>
-                    <ul class="list-group list-group-flush" id="list-of-items">
-                        <li class="list-group-item">Item 1</li>
-                        <li class="list-group-item">Item 2</li>
-                        <li class="list-group-item">Item 3</li>
-                        <li class="list-group-item">Item 4</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 p-3 text-start">
 
-        <!-- Timed updates -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card3">
-                <div class="card-header" style="font-weight: bold;">Timed Updates</div>
-                <div class="card-body">
-                    <div id="time-output"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- User input -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card4">
-                <div class="card-header" style="font-weight: bold;">User Input</div>
-                <div class="card-body">
-                    <form>
-                        <input type="password" class="form-control" id="password-input" placeholder="Enter new password"
-                            required>
-                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Window properties -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card5">
-                <div class="card-header" style="font-weight: bold;">Window Properties</div>
-                <div class="card-body">
-                    <div id="window-properties"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation history -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card6">
-                <div class="card-header" style="font-weight: bold;">Navigation History</div>
-                <div class="card-body">
-                    <div>
-                        <label for="go-back-button"><b>Note:</b> No effect if this is your first page.</label>
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary mt-2" id="go-back-button">Back</button>
+            <!-- DOM traversal -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card1">
+                    <div class="card-header" style="font-weight: bold;">DOM Traversal</div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <button class="btn btn-primary" id="log-button">Log</button>
+                            <input type="text" class="form-control" id="input-field" placeholder="Enter text"
+                                value="card2" disabled>
+                        </div>
+                        <div class="input-group mb-3" id="result-field"></div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Bonus: Boostrap modals -->
-        <div class="col">
-            <div class="card mb-4 shadow" id="card7">
-                <div class="card-header" style="font-weight: bold;">Bonus: Boostrap Modals</div>
-                <div class="card-body">
-                    <div>
-                        <input type="password" class="form-control" id="password-input-modal"
-                            placeholder="Enter new password">
-                    </div>
-                    <div>
-                        <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
-                            data-bs-target="#Modal">Submit</button>
+            <!-- DOM modification -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card2">
+                    <div class="card-header" style="font-weight: bold;">DOM Modification</div>
+                    <div class="card-body">
+                        <button class="btn btn-primary" id="addItemButton">Add Item</button>
+                        <ul class="list-group list-group-flush" id="list-of-items">
+                            <li class="list-group-item">Item 1</li>
+                            <li class="list-group-item">Item 2</li>
+                            <li class="list-group-item">Item 3</li>
+                            <li class="list-group-item">Item 4</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tree Walker (second approach for DOM Traversal)-->
-        <div class="col">
-            <div class="card mb-4 m shadow" id="card8">
-                <div class="card-header" style="font-weight: bold;">Tree Walker (DOM Traversal)</div>
-                <div class="card-body mx-1">                    
-                    <div>
-                        <button type="button" class="btn btn-primary mb-2" id="tree-walker-button">Find Text Nodes</button>
+            <!-- Timed updates -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card3">
+                    <div class="card-header" style="font-weight: bold;">Timed Updates</div>
+                    <div class="card-body">
+                        <div id="time-output"></div>
                     </div>
-                    <div>
-                        <select class="form-select mb-2" id="search-options">
-                            <option value="card1" id="card1-selection">card1</option>
-                            <option value="card2" id="card2-selection">card2</option>
-                            <option value="card3" id="card3-selection">card3</option>
-                            <option value="card4" id="card4-selection">card4</option>
-                            <option value="card5" id="card5-selection">card5</option>
-                            <option value="card6" id="card6-selection">card6</option>
-                            <option value="card7" id="card7-selection">card7</option>
-                        </select>
-                    </div>
-                    <div id="tree-walker-output"></div>
                 </div>
             </div>
-        </div>
 
+            <!-- User input -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card4">
+                    <div class="card-header" style="font-weight: bold;">User Input</div>
+                    <div class="card-body">
+                        <form>
+                            <input type="password" class="form-control" id="password-input"
+                                placeholder="Enter new password" required>
+                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Window properties -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card5">
+                    <div class="card-header" style="font-weight: bold;">Window Properties</div>
+                    <div class="card-body">
+                        <div id="window-properties"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation history -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card6">
+                    <div class="card-header" style="font-weight: bold;">Navigation History</div>
+                    <div class="card-body">
+                        <div>
+                            <label for="go-back-button"><b>Note:</b> No effect if this is your first page.</label>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary mt-2" id="go-back-button">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus: Boostrap modals -->
+            <div class="col">
+                <div class="card mb-4 shadow" id="card7">
+                    <div class="card-header" style="font-weight: bold;">Bonus: Boostrap Modals</div>
+                    <div class="card-body">
+                        <div>
+                            <input type="password" class="form-control" id="password-input-modal"
+                                placeholder="Enter new password">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
+                                data-bs-target="#Modal">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tree Walker (second approach for DOM Traversal)-->
+            <div class="col">
+                <div class="card mb-4 m shadow" id="card8">
+                    <div class="card-header" style="font-weight: bold;">Tree Walker (DOM Traversal)</div>
+                    <div class="card-body mx-1">
+                        <div>
+                            <button type="button" class="btn btn-primary mb-2" id="tree-walker-button">Find Text
+                                Nodes</button>
+                        </div>
+                        <div>
+                            <select class="form-select mb-2" id="search-options">
+                                <option value="card1" id="card1-selection">card1</option>
+                                <option value="card2" id="card2-selection">card2</option>
+                                <option value="card3" id="card3-selection">card3</option>
+                                <option value="card4" id="card4-selection">card4</option>
+                                <option value="card5" id="card5-selection">card5</option>
+                                <option value="card6" id="card6-selection">card6</option>
+                                <option value="card7" id="card7-selection">card7</option>
+                            </select>
+                        </div>
+                        <div id="tree-walker-output"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
     </div>
 
-    
+
 
     <!-- Modal -->
     <div class="modal fade" id="Modal" tabindex="-1">
