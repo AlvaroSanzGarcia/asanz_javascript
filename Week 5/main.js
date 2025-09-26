@@ -190,7 +190,7 @@ function validateRadioButtons() {
 }
 
 
-// Event listener for the submit button
+// Event listener for the 'submit' button
 document.getElementById("validateButton").addEventListener("click", function (e) {
     e.preventDefault();
 
