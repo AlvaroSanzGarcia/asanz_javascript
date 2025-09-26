@@ -1,0 +1,58 @@
+body {
+    background-image: url(img/dolomites.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 0.95rem;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input.form-control,
+#contactMethods {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+label {
+    color: white;
+}
+
+.validation-display {
+    color: #dc3545;
+}
+
+input.form-control.my-valid {
+    border: 2px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+input.form-control.my-invalid {
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+#validationForm select.form-select.my-valid {
+    border: 2px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+#validationForm select.form-select.my-invalid {
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+#contact-time.my-valid{
+    border: 2px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+#contact-time.my-invalid{
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
