@@ -34,8 +34,11 @@ document.querySelectorAll('input[name="contactTime"]').forEach(element => {
 })
 
 
+
+
 /*---------Override native browser validation messages---------*/
-document.getElementById("submitButton").addEventListener("click", function() {
+
+document.getElementById("submitButton").addEventListener("click", function () {
     let phoneInput = document.getElementById("phone-number-input");
     if (phoneInput.validity.patternMismatch) {
         phoneInput.setCustomValidity("Format must be XXX-XXX-XXXX, starting with 2-9");
@@ -54,6 +57,18 @@ document.getElementById("submitButton").addEventListener("click", function() {
         nameInput.reportValidity();
     }
 })
+
+// Display input validity state to the console when clicking 'submit'
+document.getElementById("submitButton").addEventListener("click", function () {
+    console.clear();
+    document.querySelectorAll("#validationForm input:enabled, #validationForm select").forEach(field => {        
+        console.log(`Field '${field.id}' input: valid? ---> ${field.checkValidity()}`);
+        console.log(field.validity);
+        console.log("\n");
+    });
+})
+
+
 
 
 /* -----------------------------------------Custom validation--------------------------------------- */
