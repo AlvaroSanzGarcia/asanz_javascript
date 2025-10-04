@@ -48,7 +48,7 @@ function Student(name, lastName) {
 }
 
 
-// Prototype method
+    // Prototype method
 Student.prototype.getLetterGrade = function () {
     if (this.GPA === null) {
         return "No GPA Available";
@@ -60,7 +60,7 @@ Student.prototype.getLetterGrade = function () {
 }
 
 
-// Instantiating Student objects
+    // Instantiating Student objects
 let student1 = new Student("Emily", "Davis");
 let student2 = new Student("Ethan", "Clark");
 let student3 = new Student("Grace", "Anderson");
@@ -120,7 +120,7 @@ console.log(product1.displayProduct());
 
 
 
-// Prototype chain
+// Part 4: Prototype chain
 function Item(SKU) {
     this.SKU = SKU;
 }
@@ -170,7 +170,7 @@ document.getElementById("prototype-chain-output").innerHTML += eBook1.displayBoo
 
 
 
-// Part 4: Parsing to/from JSON data 
+// Part 5: Parsing to/from JSON data 
 let json_String = JSON.stringify(country);
 document.getElementById("JSON-object-ouput").innerHTML += `<b>JSON String:</b> ${json_String}<br>`;
 

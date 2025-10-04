@@ -18,6 +18,7 @@ class Product extends Item {   // Derived class
     }
 
     constructor(name, description, price) {
+        super(null);
         this.name = name;
         this.description = description;
         this.price = price;
@@ -25,6 +26,13 @@ class Product extends Item {   // Derived class
 
     displayProduct() {   // Public method
         return `<b>Product:</b> ${this.name}<br><b>Description:</b> ${this.description}<br><b>Price:</b> ${this.price}<br>`;
+    }
+
+    displayPrice() {   // Public method
+        return `<b>Price:</b> ${this.price.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+        })}<br>`;
     }
 
     calculatePriceAfterTax() {   // Privileged method
@@ -71,5 +79,6 @@ eBook1.price = 24.95;
 
 // Calling inherited methods
 document.getElementById("prototype-chain-output").innerHTML += eBook1.displayBook();
+document.getElementById("prototype-chain-output").innerHTML += eBook1.displayPrice();
 document.getElementById("prototype-chain-output").innerHTML += eBook1.calculatePriceAfterTax();
 document.getElementById("prototype-chain-output").innerHTML += eBook1.displaySKU();
