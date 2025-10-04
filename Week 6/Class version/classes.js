@@ -1,4 +1,4 @@
-// Class-based prototype chain
+// Class-based prototype chain 
 
 class Item {
     constructor() {   // Base class
