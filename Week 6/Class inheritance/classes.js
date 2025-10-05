@@ -1,7 +1,8 @@
-// Class-based prototype chain 
+// ---------------------Class-based prototype chain-------------------
 
+// Base class
 class Item {
-    constructor() {   // Base class
+    constructor() {   
         this.SKU = null;
     }
 
@@ -11,7 +12,8 @@ class Item {
 }
 
 
-class Product extends Item {   // Derived class
+// Child class of Item
+class Product extends Item {   
     #calculateTax() {   // Private method
         const taxRate = 0.0903;
         return this.price * taxRate;
@@ -35,7 +37,7 @@ class Product extends Item {   // Derived class
         })}<br>`;
     }
 
-    calculatePriceAfterTax() {   // Privileged method
+    calculatePriceAfterTax() {   // Public method
         const priceAfterTax = this.price + this.#calculateTax();
         return `<b>Price After Tax:</b> ${priceAfterTax.toLocaleString('en-US', {
             style: 'currency',
@@ -45,7 +47,8 @@ class Product extends Item {   // Derived class
 }
 
 
-class Book extends Product {   // Derived class
+// Child class of Product
+class Book extends Product {   
     constructor(title, author, publisher) {
         super(null, null, null);
         this.title = title;
@@ -57,12 +60,14 @@ class Book extends Product {   // Derived class
         this.genre = null;
     }
 
-    displayBook() {
+    displayBook() {     // Public method
         return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Publisher:</b> ${this.publisher}<br>`;
     }
 }
 
-class eBook extends Book {   // Derived class
+
+// Child class of Book
+class eBook extends Book {  
     constructor(title, author, publisher, filename) {
         super(title, author, publisher);
         this.filename = filename;
