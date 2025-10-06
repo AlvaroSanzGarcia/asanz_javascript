@@ -139,7 +139,7 @@ function EBook(SKU, productName, description, price, title, author, filename) {
 
 /* Note: Always assign prototype methods *after* setting up the prototype chain.
 If you define methods on Product.prototype first, then overwrite it with Object.create(...),
-you replace the entire prototype object—wiping out any previously defined methods.
+you replace the entire prototype object, wiping out any previously defined methods.
 To preserve your methods, assign them *after* the prototype chain is established. */
 
 Product.prototype = Object.create(Item.prototype);
