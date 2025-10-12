@@ -1,0 +1,31 @@
+body {
+    margin: 1em;
+    padding: 1em;
+}
+
+#draggableBoxes {
+    margin: .5em .5em .5em .5em;
+    padding: .5em .5em .5em .5em;
+    border: thin blue dashed;
+    width: 100%; 
+}
+
+#tiltyTable {
+    margin: .5em .5em .5em .5em;
+    padding: .5em .5em .5em .5em;
+    border: thick green solid;
+    width: 90%;
+    height: 200px;
+}
+
+.box {
+    background: firebrick;
+    border: thick red solid;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+}
+
+#draggableBoxes > .box {
+    position: relative;
+}
