@@ -12,6 +12,10 @@ window.onload = function () {
     // Display session storage data
     const sessionContainer = document.getElementById("session-storage-container");
     for (let i = 0; i < sessionStorage.length; i++) {
+
+        // Remove "IsThisFirstTime_Log_From_LiveServer" key-value pair that Live Server automatically adds to session storage 
+        if (sessionStorage.key(i) === "IsThisFirstTime_Log_From_LiveServer") {sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer")};
+
         let key = sessionStorage.key(i);
         let value = sessionStorage.getItem(key);
         sessionContainer.innerHTML += `<p>${key}: ${value}</p>`;
