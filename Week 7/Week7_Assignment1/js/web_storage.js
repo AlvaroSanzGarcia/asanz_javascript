@@ -5,9 +5,10 @@ window.onload = function () {
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let value = localStorage.getItem(key);
-        localContainer.innerHTML += `<p>${key}: ${value}</p>`;
+        localContainer.innerHTML += `<p><b>${key}:</b> ${value}</p>`;
     }
     console.log(this.localStorage);
+
 
     // Display session storage data
     const sessionContainer = document.getElementById("session-storage-container");
@@ -18,15 +19,16 @@ window.onload = function () {
 
         let key = sessionStorage.key(i);
         let value = sessionStorage.getItem(key);
-        sessionContainer.innerHTML += `<p>${key}: ${value}</p>`;
+        sessionContainer.innerHTML += `<p><b>${key}:</b> ${value}</p>`;
     }
+    
 
     // Display cookies
     const cookieContainer = document.getElementById("cookie-storage-container");
     let myPreferences = readCookie();
     for (let name in myPreferences) {
         let value = myPreferences[name];
-        cookieContainer.innerHTML += `<p>${name}: ${value}</p>`;
+        cookieContainer.innerHTML += `<p><b>${name}:</b> ${value}</p>`;
     }
 
     console.log("Cookies:", myPreferences);
