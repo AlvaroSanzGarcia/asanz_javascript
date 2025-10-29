@@ -1,0 +1,21 @@
+<form class="mt-5">
+    <h1 class="mb-5 text-center">Tip Calculator</h1>
+    <div class="row mb-5">
+        <div class="form-group col-md-4 mb-3">
+            <label for="billAmountInput">Bill Amount</label>
+            <input [(ngModel)]="billInput" type="number" class="form-control" name="billInput" id="billAmountInput" min="0" required>
+        </div>
+        <div class="form-group col-md-4 mb-3">
+            <label for="tipPercentageInput">Tip Percentage</label>
+            <input [(ngModel)]="tipInput" type="number" class="form-control" name="tipInput" id="tipPercentageInput" min="0" step="0.01" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="numberOfPeopleInput">Number Of People</label>
+            <input [(ngModel)]="peopleInput" type="number" class="form-control" name="peopleInput" id="numberOfPeopleInput" min="1" required>
+        </div>
+    </div>
+    <p><b>Total Bill:</b> {{ totalBillFormatted }}</p>
+    <p><b>Total Tip:</b> {{ totalTipFormatted }}</p>
+    <p><b>Amount Per Person:</b> {{ totalPerPersonFormatted }}</p>
+    <button (click)="calculateTip()" type="button" class="btn btn-primary mt-3">Calculate Tip</button>
+</form>
