@@ -1,0 +1,54 @@
+<div class="d-flex mt-3">
+    <div class="container mt-3">
+
+        <div class="d-flex align-items-center m-2">
+            <button type="button" class="btn btn-outline-primary" (click)="accountsService.addUser()">
+                Add User
+            </button>
+        </div>
+
+        @for (i of accountsService.users; track i) {
+
+        <div class="d-flex align-items-center m-2">
+
+            <button style="display: block" type="button" class="btn btn-light btn-outline-secondary m-2"
+                (click)="accountsService.onSelectUser($index)">
+                <img width="20" src="{{ accountsService.imagePath($index) }}" />
+                <span class="m-2">{{ i.name }}</span>
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm m-1"
+                (click)="accountsService.delUser($index)">Delete</button>
+            <button type="button" class="btn btn-outline-warning btn-sm"
+                (click)="accountsService.editUser($index)">Edit</button>
+
+        </div>
+        }
+
+    </div>
+
+    @if (accountsService.showForm) {
+    <form class="m-3">
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" class="form-control" [(ngModel)]="accountsService.newId" name="id"/>
+        </div>
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" [(ngModel)]="accountsService.newName" name="name"/>
+        </div>
+        <button type="button" class="btn btn-warning mt-2" (click)="accountsService.saveChanges(accountsService.selectedUserIndex)">Save Changes</button>
+    </form>
+    }
+
+
+    <div class="m-3">
+        @if (accountsService.selectedUser) {
+        <div>
+            <h6>ID: {{ accountsService.selectedUser.id }}</h6>
+            <img src="{{ accountsService.imagePath(accountsService.selectedUserIndex) }}" height="150" width="150" />
+            <br>
+            <h2>{{ accountsService.selectedUser.name }}</h2>
+        </div>
+        }
+    </div>
+</div>

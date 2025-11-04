@@ -7,9 +7,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3" routerLink="/">Home</a>
-        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3" routerLink="/about">About</a>
-        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3" routerLink="/calculator">Calculator</a>
+        @if (accountsService.selectedUser) {
+        <img class="ms-3" src="{{ accountsService.imagePath(accountsService.selectedUserIndex) }}" width="32"
+          height="32" />
+        }
+        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3"
+          routerLink="/">Home</a>
+        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3"
+          routerLink="/about">About</a>
+        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3"
+          routerLink="/calculator">Calculator</a>
+        <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-item nav-link active mx-3"
+          routerLink="/accounts">Accounts</a>
       </div>
     </div>
   </nav>

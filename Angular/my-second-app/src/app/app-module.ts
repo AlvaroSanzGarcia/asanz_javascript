@@ -9,6 +9,7 @@ import { Footer } from './footer/footer';
 import { About } from './about/about';
 import { Calculator } from './calculator/calculator';
 import { Home } from './home/home';
+import { Accounts } from './accounts/accounts';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { Home } from './home/home';
     Footer,
     About,
     Calculator,
-    Home
+    Home,
+    Accounts
   ],
   imports: [
     BrowserModule,
