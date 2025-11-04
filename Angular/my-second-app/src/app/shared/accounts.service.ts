@@ -14,6 +14,7 @@ export class AccountsService {
     showForm: boolean = false;
     newId: string = '';
     newName: string = '';
+    newDescription: string = '';
 
 
     imagePath(i: number) {
@@ -44,6 +45,7 @@ export class AccountsService {
 
         this.newId = newUser.id;
         this.newName = newUser.name;
+        this.newDescription = newUser.description;
         this.showForm = true;
 
     }
@@ -55,6 +57,7 @@ export class AccountsService {
         
         this.newId = this.selectedUser.id;
         this.newName = this.selectedUser.name;
+        this.newDescription = this.selectedUser.description;
         this.showForm = true;
     }
 
@@ -63,6 +66,7 @@ export class AccountsService {
         this.selectedUserIndex = i;
         this.users[i].id = this.newId;
         this.users[i].name = this.newName;
+        this.users[i].description = this.newDescription;
         this.showForm = false;
     }
 }
