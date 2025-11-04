@@ -1,7 +1,5 @@
-import { NgModule } from '@angular/core';
 import { Injectable } from "@angular/core";
 import { DUMMY_USERS } from "../dummy-users";
-import { FormsModule } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root'

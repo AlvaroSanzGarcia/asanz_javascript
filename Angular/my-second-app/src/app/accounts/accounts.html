@@ -1,54 +1,59 @@
-<div class="d-flex mt-3">
-    <div class="container mt-3">
+<div class="container mt-3">
+  <div class="row">
+    <!-- Left column: User list -->
+    <div class="col-12 col-md-6">
+      <div class="d-flex align-items-center mb-3">
+        <button type="button" class="btn btn-outline-primary" (click)="accountsService.addUser()">
+          Add User
+        </button>
+      </div>
 
-        <div class="d-flex align-items-center m-2">
-            <button type="button" class="btn btn-outline-primary" (click)="accountsService.addUser()">
-                Add User
-            </button>
+     
+      @for (i of accountsService.users; track i) {
+        <div class="d-flex align-items-center mb-2 flex-wrap">
+          <button type="button" class="btn btn-light btn-outline-secondary me-2 mb-2"
+                  (click)="accountsService.onSelectUser($index)">
+            <img width="20" src="{{ accountsService.imagePath($index) }}" />
+            <span class="ms-2">{{ i.name }}</span>
+          </button>
+          <button type="button" class="btn btn-outline-danger btn-sm me-2 mb-2"
+                  (click)="accountsService.delUser($index)">Delete</button>
+          <button type="button" class="btn btn-outline-warning btn-sm mb-2"
+                  (click)="accountsService.editUser($index)">Edit</button>
         </div>
-
-        @for (i of accountsService.users; track i) {
-
-        <div class="d-flex align-items-center m-2">
-
-            <button style="display: block" type="button" class="btn btn-light btn-outline-secondary m-2"
-                (click)="accountsService.onSelectUser($index)">
-                <img width="20" src="{{ accountsService.imagePath($index) }}" />
-                <span class="m-2">{{ i.name }}</span>
-            </button>
-            <button type="button" class="btn btn-outline-danger btn-sm m-1"
-                (click)="accountsService.delUser($index)">Delete</button>
-            <button type="button" class="btn btn-outline-warning btn-sm"
-                (click)="accountsService.editUser($index)">Edit</button>
-
-        </div>
-        }
-
+      }
     </div>
 
-    @if (accountsService.showForm) {
-    <form class="m-3">
-        <div class="form-group">
+    <!-- Right column: Form and selected user -->
+    <div class="col-12 col-md-6">
+
+      @if (accountsService.selectedUser) {
+        <div class="text-center">
+          <h6>ID: {{ accountsService.selectedUser.id }}</h6>
+          <img src="{{ accountsService.imagePath(accountsService.selectedUserIndex) }}" class="img-fluid mb-2" style="max-width: 100px; height: auto;"/>
+          <h2>{{ accountsService.selectedUser.name }}</h2>
+        </div>
+      }  
+
+      @if (accountsService.showForm) {
+        <form class="mb-3">
+          <div class="form-group mb-2">
             <label>ID</label>
-            <input type="text" class="form-control" [(ngModel)]="accountsService.newId" name="id"/>
-        </div>
-        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="accountsService.newId" name="id" />
+          </div>
+          <div class="form-group mb-2">
             <label>Username</label>
-            <input type="text" class="form-control" [(ngModel)]="accountsService.newName" name="name"/>
-        </div>
-        <button type="button" class="btn btn-warning mt-2" (click)="accountsService.saveChanges(accountsService.selectedUserIndex)">Save Changes</button>
-    </form>
-    }
-
-
-    <div class="m-3">
-        @if (accountsService.selectedUser) {
-        <div>
-            <h6>ID: {{ accountsService.selectedUser.id }}</h6>
-            <img src="{{ accountsService.imagePath(accountsService.selectedUserIndex) }}" height="150" width="150" />
-            <br>
-            <h2>{{ accountsService.selectedUser.name }}</h2>
-        </div>
-        }
+            <input type="text" class="form-control" [(ngModel)]="accountsService.newName" name="name" />
+          </div>
+          <div class="d-flex mt-2">
+            <button type="button" class="btn btn-warning"
+                    (click)="accountsService.saveChanges(accountsService.selectedUserIndex)">Save</button>
+            <button type="button" class="btn btn-secondary ms-2"
+                    (click)="accountsService.showForm = false">Cancel</button>
+          </div>
+        </form>
+      }
+      
     </div>
+  </div>
 </div>
