@@ -1,0 +1,186 @@
+<!-- Author: Álvaro Sanz García -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitSquare - Add Expenses</title>
+    <link rel="icon" type="image/png" href="img/SplitSquareIcon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Expense Form -->
+    <form action="settlement_summary.html" method="get" id="expenses-form" class="p-4 border rounded shadow-sm bg-light">
+
+        <!-- Payer & Expense Name -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="payer-input" class="form-label">Payer</label>
+                <select class="form-select" id="payer-input" required>
+                    <option value="" selected disabled>Select a payer</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="expense-name-input" class="form-label">Expense Name</label>
+                <input id="expense-name-input" type="text" class="form-control" placeholder="Enter expense name"
+                    required>
+            </div>
+        </div>
+
+        <!-- Amount & Category -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="amount-input" class="form-label">Amount</label>
+                <input id="amount-input" type="number" class="form-control" placeholder="Enter amount" min="1"
+                    step="0.01" required>
+            </div>
+            <div class="col-md-6">
+                <label for="category-input" class="form-label">Category</label>
+                <select class="form-select" id="category-input" required>
+                    <option value="" selected disabled>Select a category</option>
+
+                    <optgroup label="Food & Drinks">
+                        <option value="Groceries">Groceries</option>
+                        <option value="Restaurants & Cafés">Restaurants & Cafés</option>
+                        <option value="Takeout & Delivery">Takeout & Delivery</option>
+                        <option value="Bars & Nightlife">Bars & Nightlife</option>
+                    </optgroup>
+
+                    <optgroup label="Transportation">
+                        <option value="Fuel / Gas">Fuel / Gas</option>
+                        <option value="Public Transit">Public Transit</option>
+                        <option value="Ride-shares & Taxis">Ride-shares & Taxis</option>
+                        <option value="Parking & Tolls">Parking & Tolls</option>
+                        <option value="Vehicle Maintenance">Vehicle Maintenance</option>
+                    </optgroup>
+
+                    <optgroup label="Accommodation">
+                        <option value="Rent / Mortgage">Rent / Mortgage</option>
+                        <option value="Hotels / Airbnb">Hotels / Airbnb</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Internet & Phone">Internet & Phone</option>
+                    </optgroup>
+
+                    <optgroup label="Entertainment & Leisure">
+                        <option value="Movies & Concerts">Movies & Concerts</option>
+                        <option value="Streaming Services">Streaming Services</option>
+                        <option value="Sports & Recreation">Sports & Recreation</option>
+                        <option value="Events & Festivals">Events & Festivals</option>
+                    </optgroup>
+
+                    <optgroup label="Shopping">
+                        <option value="Clothing & Accessories">Clothing & Accessories</option>
+                        <option value="Household Items">Household Items</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Gifts">Gifts</option>
+                    </optgroup>
+
+                    <optgroup label="Health & Wellness">
+                        <option value="Medicine & Pharmacy">Medicine & Pharmacy</option>
+                        <option value="Doctor Visits">Doctor Visits</option>
+                        <option value="Gym / Fitness">Gym / Fitness</option>
+                        <option value="Insurance">Insurance</option>
+                    </optgroup>
+
+                    <optgroup label="Education & Work">
+                        <option value="Books & Courses">Books & Courses</option>
+                        <option value="Office Supplies">Office Supplies</option>
+                        <option value="Tuition / Training">Tuition / Training</option>
+                        <option value="Software & Tools">Software & Tools</option>
+                    </optgroup>
+
+                    <optgroup label="Travel">
+                        <option value="Flights">Flights</option>
+                        <option value="Trains / Buses">Trains / Buses</option>
+                        <option value="Hotels / Lodging">Hotels / Lodging</option>
+                        <option value="Travel Insurance">Travel Insurance</option>
+                        <option value="Tours & Activities">Tours & Activities</option>
+                    </optgroup>
+
+                    <optgroup label="Miscellaneous">
+                        <option value="Donations / Charity">Donations / Charity</option>
+                        <option value="Pet Care">Pet Care</option>
+                        <option value="Childcare">Childcare</option>
+                        <option value="Unexpected Expenses">Unexpected Expenses</option>
+                        <option value="Other">Other</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <!-- Date & Split Among -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="date-input" class="form-label">Date</label>
+                <input id="date-input" type="date" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label for="split-among-field" class="form-label">Split Among</label>
+                <select class="form-select" id="split-among-field" multiple required></select>
+                <div class="form-text">Hold Ctrl (Windows) or Cmd (Mac) to select multiple participants.</div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="row">
+            <div class="col-md-6 d-grid">
+                <button type="button" class="btn btn-primary" id="add-expense">Add Expense</button>
+            </div>
+            <div class="col-md-6 d-grid">
+                <button type="submit" class="btn btn-warning" id="split-expenses">Continue To Split Expenses</button>
+            </div>
+        </div>
+
+    </form>
+
+    <!-- Expenses Table -->
+    <div id="table-container" class="d-none">
+        <table id="expenses-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Paid By</th>
+                    <th scope="col">Expense</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Split Among</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="js/expenses.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<!-- Bootstrap Modal: Alert shown when user tries to split expenses but no expenses have been logged yet -->
+<div class="modal" tabindex="-1" id="no-expenses-alert">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">No expenses logged!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>You must enter at least one expense</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<!-- Author: Álvaro Sanz García -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SplitSquare - Settlement Payments Report</title>
+    <link rel="icon" type="image/png" href="img/SplitSquareIcon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/settlement_summary_styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Title (group name) -->
+    <div id = "groupNameHeadingContainer" class="container text-center my-4">
+        <h2 id="groupNameHeading"></h2>
+    </div>
+
+
+    <!-- Container for settlement transanctions cards -->
+    <div class="container mt-5">
+        <h3 class="mb-4">Balances to Settle</h3>
+        <div id="cardsContainer" class="d-flex justify-content-center align-items-center flex-wrap mt-2 gap-3"
+            style="max-width: 1100px; margin: 0 auto;">
+        </div>
+    </div>
+
+    <!-- Table for expenses summary -->
+    <div id="tableContainer" class="container my-3">
+        <h3 class="mb-3">Expenses Summary</h3>
+        <table id="expensesTable" class="table table-striped table-hover table-bordered shadow">
+            <thead class="table-dark">
+                <tr>
+                    <th>Payer</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Split Among</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- 'Total spent' display -->
+        <div class="d-flex justify-content-end mt-3">
+            <h5 id="totalSpentDisplay" class="fw-bold text-primary"></h5>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between my-3">
+            <button class="btn btn-warning" id="newExpenseGroup">New Expense Group</button>
+            <button class="btn btn-outline-dark" id="copy-btn">
+                <span class="me-2" id="copy-button-text">Copy To Clipboard</span>
+                <svg id="clipboard-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+                    <path
+                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+                </svg>
+
+                <svg id="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check" viewBox="0 0 16 16" style="display:none;">
+                    <path
+                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <script src="js/settlement_summary.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
