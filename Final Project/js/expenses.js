@@ -106,7 +106,7 @@ class TransactionLedger {
 
 
 // Variable declaration
-const table = document.getElementById("expenses-table");
+const tableBody = document.querySelector("#expenses-table tbody");
 const form = document.getElementById("expenses-form");
 const payerField = document.getElementById("payer-input");
 const splitAmongField = document.getElementById("split-among-field");
@@ -142,7 +142,7 @@ document.getElementById("add-expense").addEventListener("click", function () {
         // Populate table with expenses so the user can see a record of each entry
         document.getElementById("table-container").classList.remove("d-none");
         const formFields = document.querySelectorAll("input, select");
-        const row = table.insertRow();
+        const row = tableBody.insertRow();
         let splitters = [];
         for (let i = 0; i < formFields.length; i++) {
             const cell = row.insertCell(i);
